@@ -1,0 +1,153 @@
+<h2 class="pageheading">{{ 'DashBoardModule.dashboard.title' | translate}}</h2>
+<div class="example-container mat-elevation-z8 no-shadow bord-all" >
+  <table mat-table [dataSource]="dataSource" class="full-width listtable">
+
+    <ng-container matColumnDef="PriorityName">
+      <th mat-header-cell *matHeaderCellDef>{{ 'DashBoardModule.dashboard.priority' | translate}}</th>
+      <td mat-cell *matCellDef="let row"> {{ 'DashBoardModule.dashboard.'+row.PriorityName | translate }}</td>
+    </ng-container>
+    <ng-container matColumnDef="Incoming">
+      <th mat-header-cell *matHeaderCellDef>{{ 'DashBoardModule.dashboard.messagesReceived' | translate}}</th>
+      <td mat-cell *matCellDef="let row">{{ row.Incoming }}</td>
+    </ng-container>
+    <ng-container matColumnDef="Pending">
+      <th mat-header-cell *matHeaderCellDef>{{ 'DashBoardModule.dashboard.messagesPending' | translate}}</th>
+      <td mat-cell *matCellDef="let row">{{ row.Pending }}</td>
+    </ng-container>
+    <ng-container matColumnDef="Outgoing">
+      <th mat-header-cell *matHeaderCellDef>{{ 'DashBoardModule.dashboard.messagesSent' | translate}}</th>
+      <td mat-cell *matCellDef="let row">{{ row.Outgoing }}</td>
+    </ng-container>
+    <ng-container matColumnDef="Delivered">
+      <th mat-header-cell *matHeaderCellDef>{{ 'DashBoardModule.dashboard.messagesDelivered' | translate}}</th>
+      <td mat-cell *matCellDef="let row">{{ row.Delivered }}</td>
+    </ng-container>
+
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+</div>
+<!-- <div class="example-container mat-elevation-z8 no-shadow" *ngIf="dataSource ?dashBoard?.length == 0: false">
+  <span>{{'DashBoardModule.dashboard.noDataFound' | translate}}</span>
+</div> -->
+
+
+<div fxLayout="row wrap" style="clear:both">
+    <div  fxFlex="50">
+        <google-chart #chart
+        [title]="title"
+        [type]="type"
+        [data]="data"
+        [columnNames]="columnNames"
+        [options]="options"
+        [width]="width"
+        [height]="height">
+      </google-chart>
+      </div>
+
+     
+  
+  <div  fxFlex="50">
+  <google-chart #chart
+   [title]="title1"
+   [type]="type1"
+   [data]="data1"
+   [columnNames]="columnNames1"
+   [options]="options1"
+   [width]="width1"
+   [height]="height1">
+</google-chart>
+</div>
+
+
+<div  fxFlex="50">
+    <google-chart #chart
+     [title]="title2"
+     [type]="type2"
+     [data]="data2"
+     [columnNames]="columnNames2"
+     [options]="options2"
+     [width]="width2"
+     [height]="height2">
+  </google-chart>
+  </div>
+
+
+  <div  fxFlex="50">
+      <google-chart #chart
+      [title]="title3"
+      [type]="type3"
+      [data]="data3"
+      [columnNames]="columnNames3"
+      [options]="options3"
+      [width]="width3"
+      [height]="height3">
+    </google-chart>
+    </div>
+
+
+
+
+<div  fxFlex="50">
+  <google-chart #chart
+  [title]="title4"
+  [type]="type4"
+  [data]="data4"
+  [columnNames]="columnNames4"
+  [options]="options4"
+  [width]="width4"
+  [height]="height4">
+</google-chart>
+</div>
+</div>
+
+
+<div fxLayout="row wrap" style="clear:both">
+<div  fxFlex="50">
+    <google-chart #chart
+    [title]="title5"
+    [type]="type5"
+    [data]="data5"
+    [columnNames]="columnNames5"
+    [options]="options5"
+    [width]="width5"
+    [height]="height5">
+  </google-chart>
+  </div>
+
+
+  <div  fxFlex="50">
+      <google-chart #chart
+      [title]="title6"
+      [type]="type6"
+      [data]="data6"
+      [columnNames]="columnNames6"
+      [options]="options6"
+      [width]="width6"
+      [height]="height6">
+    </google-chart>
+    </div>
+
+
+
+  
+</div>
+
+
+
+
+<!-- 
+<div  fxFlex="50">
+    <google-chart #chart
+    [title]="title1"
+    [type]="type1"
+    [data]="data1"
+    [columnNames]="columnNames1"
+    [options]="options1"
+    [width]="width1"
+    [height]="height1">
+  </google-chart>
+  </div> -->
+
